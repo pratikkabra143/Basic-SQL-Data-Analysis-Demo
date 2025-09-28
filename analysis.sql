@@ -40,3 +40,11 @@ WHERE customerNumber IN (
     WHERE orderDate >= '2004-01-01'
 );
 
+-- 7. Aggregate Function (AVG)
+SELECT AVG(order_total) AS avg_order_value
+FROM (
+    SELECT o.orderNumber, SUM(od.quantityOrdered * od.priceEach) AS order_total
+    FROM orders o
+    JOIN orderdetails od ON o.orderNumber = od.orderNumber
+    GROUP BY o.orderNumber
+) AS totals;
