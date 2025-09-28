@@ -25,3 +25,8 @@ SELECT p.productCode, p.productName, od.quantityOrdered
 FROM products p
 LEFT JOIN orderdetails od ON p.productCode = od.productCode
 ORDER BY p.productName;
+
+-- 5. RIGHT JOIN
+SELECT od.orderNumber, od.productCode, p.productName
+FROM orderdetails od
+RIGHT JOIN products p ON od.productCode = p.productCode;
