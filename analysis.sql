@@ -19,3 +19,9 @@ SELECT o.orderNumber, c.customerName, o.orderDate
 FROM orders o
 INNER JOIN customers c ON o.customerNumber = c.customerNumber
 ORDER BY o.orderDate DESC;
+
+-- 4. LEFT JOIN
+SELECT p.productCode, p.productName, od.quantityOrdered
+FROM products p
+LEFT JOIN orderdetails od ON p.productCode = od.productCode
+ORDER BY p.productName;
