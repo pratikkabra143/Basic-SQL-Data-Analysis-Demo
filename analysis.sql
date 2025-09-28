@@ -30,3 +30,13 @@ ORDER BY p.productName;
 SELECT od.orderNumber, od.productCode, p.productName
 FROM orderdetails od
 RIGHT JOIN products p ON od.productCode = p.productCode;
+
+-- 6. Subquery Example
+SELECT customerName
+FROM customers
+WHERE customerNumber IN (
+    SELECT customerNumber
+    FROM orders
+    WHERE orderDate >= '2004-01-01'
+);
+
