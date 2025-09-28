@@ -59,3 +59,8 @@ JOIN orderdetails od ON o.orderNumber = od.orderNumber
 GROUP BY c.customerNumber;
 
 SELECT * FROM customer_spending LIMIT 10;
+
+-- 9. Optimizing Query with Index
+CREATE INDEX idx_customerNumber ON orders(customerNumber);
+
+SHOW INDEX FROM orders;
