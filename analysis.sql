@@ -48,3 +48,14 @@ FROM (
     JOIN orderdetails od ON o.orderNumber = od.orderNumber
     GROUP BY o.orderNumber
 ) AS totals;
+
+-- 8. Creating a View
+CREATE VIEW customer_spending AS
+SELECT c.customerNumber, c.customerName,
+       SUM(od.quantityOrdered * od.priceEach) AS total_spent
+FROM customers c
+JOIN orders o ON c.customerNumber = o.customerNumber
+JOIN orderdetails od ON o.orderNumber = od.orderNumber
+GROUP BY c.customerNumber;
+
+SELECT * FROM customer_spending LIMIT 10;
