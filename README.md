@@ -29,12 +29,13 @@ The following SQL operations were implemented for demonstration purposes:
 
 ## 📂 Project Structure
 
-SQL-Data-Analysis/
-- analysis.sql # Contains all the SQL queries
-- database/database.sql # ClassicModels dataset (schema + inserts)
-- screenshots/*.png # Screenshots of query results
-- README.md # Project explanation
-
+```
+Basic-SQL-Data-Analysis-Demo/
+├── analysis.sql      # Contains all the SQL queries
+├── data/database.sql # ClassicModels dataset (schema + inserts)
+├── screenshots/*.png # Screenshots of query results
+└── README.md         # Project explanation
+```
 ---
 
 ## 🚀 How to Reproduce
